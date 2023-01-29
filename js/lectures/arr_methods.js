@@ -58,7 +58,42 @@ const tweets = [
 //ВАРИАНТ 3    -   ЧТОБЫ ЛИНТЕР НЕ РУГАЛСЯ НА ТО, чТО Мы МУТИРУЕМ ИЗНАЧАЛЬНЫЙ МАССИВ
 // ретерним массив - квадратные скобки!!
 
-    const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags]
-    , []);
+const allTags = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);
 
 console.log(allTags);
+
+// const tagsStat = allTags.reduce((acc, item)=>{
+//     console.log(acc);
+//     if (acc[item]){
+//         acc[item] += 1;
+//         // console.log(acc[item]);
+
+//         return acc;
+//     }
+
+//     acc[item] = 1
+//     return acc;
+
+// }, {})
+
+
+//  ----------------------------- я написала красиво
+
+// const tagsStat = allTags.reduce((acc, item)=>{
+//    acc[item] ? acc[item] += 1 : acc[item] = 1;
+//     return acc;
+// }, {})
+
+
+//Саша посоветовал тернарник сдвинуть чтобы не повторять то же самое
+const tagsStat = allTags.reduce((acc, item)=>{
+    console.log(acc);
+
+     return {
+        ...acc,
+        [item]: acc[item] ? acc[item] + 1 :  1,
+     };
+ }, {})
+
+
+console.log(tagsStat);
