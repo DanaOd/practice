@@ -1,3 +1,6 @@
+// задача проходит базовые тесты. НЕ ПРОХОДИТ остальное из-за рекурсии! https://www.codewars.com/kata/565b3542af398bfb50000003/javascript
+
+
 function strCount(obj) {
   // Your code here
   let count = 0;
@@ -47,6 +50,7 @@ function strCount(obj) {
     console.log('count', count);
   }
   return count;
+  
 }
 
 console.log(
